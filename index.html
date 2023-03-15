@@ -182,7 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-15 19:21:49 / 修改时间：20:40:08" itemprop="dateCreated datePublished" datetime="2023-03-15T19:21:49+08:00">2023-03-15</time>
+              <time title="创建时间：2023-03-15 19:21:49 / 修改时间：20:41:48" itemprop="dateCreated datePublished" datetime="2023-03-15T19:21:49+08:00">2023-03-15</time>
             </span>
 
           
@@ -204,7 +204,17 @@
 </ul>
 <h1 id="库的调用和安装"><a href="#库的调用和安装" class="headerlink" title="库的调用和安装"></a>库的调用和安装</h1><p>python里有很多函数是定义好的比如，int(),input()等，这些函数叫做内置函数。<br>但并不是所有函数都可以直接调用，有很大一部分放在各种库里，在使用前需要先加载库，加载库的方式为<code>import 库名</code>。<br>-例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 加载库成功后，可以利用**库名.函数**来调用里面的函数</span><br><span class="line">import math	#math为库，import关键字，表示加载库</span><br><span class="line">math.floor(10.2)	#floor()函数向下用于取整</span><br><span class="line">#也可以使用**from 库名 import 函数**的方式单独加载某一个函数</span><br><span class="line">frome math import floor</span><br><span class="line">floor(10.2)</span><br><span class="line">from math import *	#把math中的所有函数导入进来</span><br><span class="line">floor(10.2)</span><br></pre></td></tr></table></figure>
-<p>如果出现<font color=red>ModuleNotFoundError：No module named</font>这个字样说明这类库需要手动下载<br>下载方式<br>-打开cmd(最好以管理员身份运行)<br>  -win+r<br>    -输入cmd<br>-pip install 库名</p>
+<p>如果出现<font color=red>ModuleNotFoundError：No module named</font>这个字样说明这类库需要手动下载<br>下载方式</p>
+<ul>
+<li>打开cmd(最好以管理员身份运行)<ul>
+<li>win+r<ul>
+<li>输入cmd</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>pip install 库名</li>
+</ul>
 
       
     </div>

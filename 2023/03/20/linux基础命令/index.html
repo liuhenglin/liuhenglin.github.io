@@ -28,7 +28,7 @@
 <meta property="og:description" content="Linux基础命令">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-20T12:04:26.890Z">
-<meta property="article:modified_time" content="2023-03-20T13:06:11.615Z">
+<meta property="article:modified_time" content="2023-03-20T13:15:43.939Z">
 <meta property="article:author" content="恒霖">
 <meta name="twitter:card" content="summary">
 
@@ -189,7 +189,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-20 20:04:26 / 修改时间：21:06:11" itemprop="dateCreated datePublished" datetime="2023-03-20T20:04:26+08:00">2023-03-20</time>
+              <time title="创建时间：2023-03-20 20:04:26 / 修改时间：21:15:43" itemprop="dateCreated datePublished" datetime="2023-03-20T20:04:26+08:00">2023-03-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -246,7 +246,7 @@
 </tr>
 </tbody></table>
 <ul>
-<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home		#切换目录</span><br><span class="line">touch abc.txt	#创建一个空白文件abc.txt</span><br><span class="line">touch def		#创建一个空白文件def</span><br><span class="line">mkdir a		#创建一个名称为a的目录</span><br><span class="line">mkdir -p b/c	#递归创建b/c</span><br></pre></td></tr></table></figure>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home		#切换目录</span><br><span class="line">touch abc.txt		#创建一个空白文件abc.txt</span><br><span class="line">touch def		#创建一个空白文件def</span><br><span class="line">mkdir a			#创建一个名称为a的目录</span><br><span class="line">mkdir -p b/c		#递归创建b/c</span><br></pre></td></tr></table></figure>
 ** <font color=red>注意空格</font> **</li>
 </ul>
 <h1 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h1><table>
@@ -278,7 +278,7 @@
 </tr>
 </tbody></table>
 <ul>
-<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm --help		#查看rm命令的帮助文档</span><br><span class="line">rm abc.txt	#删除abc.txt</span><br><span class="line">rm -f def		#删除def文件</span><br><span class="line">rm -r a		#删除目录a</span><br><span class="line">rm -fr b		#强制删除b</span><br></pre></td></tr></table></figure></li>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm --help	#查看rm命令的帮助文档</span><br><span class="line">rm abc.txt	#删除abc.txt</span><br><span class="line">rm -f def	#删除def文件</span><br><span class="line">rm -r a		#删除目录a</span><br><span class="line">rm -fr b	#强制删除b</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="创建软连接"><a href="#创建软连接" class="headerlink" title="创建软连接"></a>创建软连接</h1><table>
 <thead>
@@ -297,7 +297,7 @@
 </tr>
 </tbody></table>
 <ul>
-<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p bb/cc	#递归创建</span><br><span class="line">touch bb/cc/aa.tct	#再bb/cc目录下创建aa.txt</span><br><span class="line">ls bb/cc		#查看aa.txt是否创建成功</span><br><span class="line">ln -s bb/cc cc.ln	#创建软连接</span><br></pre></td></tr></table></figure></li>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p bb/cc		#递归创建</span><br><span class="line">touch bb/cc/aa.tct	#再bb/cc目录下创建aa.txt</span><br><span class="line">ls bb/cc		#查看aa.txt是否创建成功</span><br><span class="line">ln -s bb/cc cc.ln	#创建软连接</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h1><table>
 <thead>
@@ -381,7 +381,7 @@
 </tr>
 </tbody></table>
 <ul>
-<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r bb.zip bb	#给bb目录打压缩包，名称为：bb.zip</span><br><span class="line">unzip bb.zip	#解压缩bb.zip</span><br></pre></td></tr></table></figure></li>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r bb.zip bb	#给bb目录打压缩包，名称为：bb.zip</span><br><span class="line">unzip bb.zip		#解压缩bb.zip</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="tar压缩与解压缩-x2F-不需要安装"><a href="#tar压缩与解压缩-x2F-不需要安装" class="headerlink" title="tar压缩与解压缩&#x2F;不需要安装"></a>tar压缩与解压缩&#x2F;不需要安装</h1><table>
 <thead>
@@ -419,7 +419,7 @@
 <td align="center">gzip压缩，节省空间</td>
 </tr>
 </tbody></table>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将bb打压缩包为bb.tar		#tar -cvf bb.tar bb	</span><br><span class="line">将bb解压缩			#tar -xvf bb.tar</span><br><span class="line">将bb打压缩包为bb.tar.gz（使用gzip）	#tar -czvf bb.tar.gz bb</span><br><span class="line">解压缩（gzip的包）			#tar -xzvf bb.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将bb打压缩包为bb.tar			#tar -cvf bb.tar bb	</span><br><span class="line">将bb解压缩				#tar -xvf bb.tar</span><br><span class="line">将bb打压缩包为bb.tar.gz（使用gzip）	#tar -czvf bb.tar.gz bb</span><br><span class="line">解压缩（gzip的包）			#tar -xzvf bb.tar.gz</span><br></pre></td></tr></table></figure>
 
 
 

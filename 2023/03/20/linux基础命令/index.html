@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Linux基础命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux">
+<meta property="og:url" content="http://example.com/2023/03/20/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Welcome to my websit">
+<meta property="og:description" content="Linux基础命令">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-20T12:04:26.890Z">
+<meta property="article:modified_time" content="2023-03-20T13:06:11.615Z">
+<meta property="article:author" content="恒霖">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/03/20/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>linux | Welcome to my websit</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Welcome to my websit</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/20/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.jpg">
+      <meta itemprop="name" content="恒霖">
+      <meta itemprop="description" content="强大的意志比技术更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Welcome to my websit">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-03-20 20:04:26 / 修改时间：21:06:11" itemprop="dateCreated datePublished" datetime="2023-03-20T20:04:26+08:00">2023-03-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" itemprop="url" rel="index"><span itemprop="name">linux基础命令</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h1><span id="more"></span>
+<h1 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ls</td>
+<td align="center">验证</td>
+</tr>
+<tr>
+<td align="center">pwd</td>
+<td align="center">显示挡墙工作目录</td>
+</tr>
+<tr>
+<td align="center">clear</td>
+<td align="center">清屏</td>
+</tr>
+<tr>
+<td align="center">touch</td>
+<td align="center">创建空白文件</td>
+</tr>
+<tr>
+<td align="center">mkdir</td>
+<td align="center">创建目录</td>
+</tr>
+<tr>
+<td align="center">mkdir -p</td>
+<td align="center">递归创建</td>
+</tr>
+</tbody></table>
+<ul>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home		#切换目录</span><br><span class="line">touch abc.txt	#创建一个空白文件abc.txt</span><br><span class="line">touch def		#创建一个空白文件def</span><br><span class="line">mkdir a		#创建一个名称为a的目录</span><br><span class="line">mkdir -p b/c	#递归创建b/c</span><br></pre></td></tr></table></figure>
+** <font color=red>注意空格</font> **</li>
+</ul>
+<h1 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">rm</td>
+<td align="center">文件删除，但无法删除目录</td>
+</tr>
+<tr>
+<td align="center">rm -f</td>
+<td align="center">强制删除文件</td>
+</tr>
+<tr>
+<td align="center">rm –help</td>
+<td align="center">帮助查找rm代码</td>
+</tr>
+<tr>
+<td align="center">rm -r</td>
+<td align="center">删除目录</td>
+</tr>
+<tr>
+<td align="center">rm -fr</td>
+<td align="center">强制删除</td>
+</tr>
+</tbody></table>
+<ul>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rm --help		#查看rm命令的帮助文档</span><br><span class="line">rm abc.txt	#删除abc.txt</span><br><span class="line">rm -f def		#删除def文件</span><br><span class="line">rm -r a		#删除目录a</span><br><span class="line">rm -fr b		#强制删除b</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="创建软连接"><a href="#创建软连接" class="headerlink" title="创建软连接"></a>创建软连接</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">ln -s</td>
+<td align="center">创建软连接</td>
+</tr>
+<tr>
+<td align="center">ls -al</td>
+<td align="center">查询，d开头是目录，l开头是软连接，-开头是文件</td>
+</tr>
+</tbody></table>
+<ul>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p bb/cc	#递归创建</span><br><span class="line">touch bb/cc/aa.tct	#再bb/cc目录下创建aa.txt</span><br><span class="line">ls bb/cc		#查看aa.txt是否创建成功</span><br><span class="line">ln -s bb/cc cc.ln	#创建软连接</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">.&#x2F;</td>
+<td align="center">当前目录</td>
+</tr>
+<tr>
+<td align="center">cp</td>
+<td align="center">复制</td>
+</tr>
+</tbody></table>
+<ul>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp bb/cc/aa.txt ./	#将cp bb/cc/aa.txt文件复制到当前目录下</span><br><span class="line">cp aa.txt aaa.txt	#文件复制cp aa.txt复制到aaa.txt</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="文件移动"><a href="#文件移动" class="headerlink" title="文件移动"></a>文件移动</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">mv</td>
+<td align="center">移动&#x2F;改名</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv bb/cc/bb.txt ./	#将bb/cc/bb.txt移动到当前目录下</span><br><span class="line">mv aaa.txt dd.txt	#文件改名</span><br></pre></td></tr></table></figure>
+<ul>
+<li>改名原理：将aaa.txt移动到当前目录下并改名为dd.txt</li>
+</ul>
+<h1 id="cat显示文件内容"><a href="#cat显示文件内容" class="headerlink" title="cat显示文件内容"></a>cat显示文件内容</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">echon</td>
+<td align="center">回显</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">重定向</td>
+</tr>
+</tbody></table>
+<ul>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Hello World&quot; &gt; aa.txt	#将回显内容，重定向到aa.txt</span><br><span class="line">cat aa.txt			#显示aa.txt文件内容</span><br></pre></td></tr></table></figure>
+1.echo的作用是把后面的内容输出到屏幕上<br>2.一个&gt;是把新的内容放到文件里，两个&gt;&gt;是把内容追加到文件里</li>
+</ul>
+<h1 id="less显示文件内容"><a href="#less显示文件内容" class="headerlink" title="less显示文件内容"></a>less显示文件内容</h1><blockquote>
+<p>less查看文件，可以滚动，翻页查看文件</p>
+<blockquote>
+<p>q退出<br>page up 上翻<br>page down 下翻</p>
+</blockquote>
+</blockquote>
+<h1 id="zip压缩与解压缩"><a href="#zip压缩与解压缩" class="headerlink" title="zip压缩与解压缩"></a>zip压缩与解压缩</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">zip</td>
+<td align="center">压缩</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">解压缩</td>
+</tr>
+<tr>
+<td align="center">zip -r</td>
+<td align="center">递归打压缩包</td>
+</tr>
+</tbody></table>
+<ul>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zip -r bb.zip bb	#给bb目录打压缩包，名称为：bb.zip</span><br><span class="line">unzip bb.zip	#解压缩bb.zip</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="tar压缩与解压缩-x2F-不需要安装"><a href="#tar压缩与解压缩-x2F-不需要安装" class="headerlink" title="tar压缩与解压缩&#x2F;不需要安装"></a>tar压缩与解压缩&#x2F;不需要安装</h1><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-c</td>
+<td align="center">创建新文件</td>
+</tr>
+<tr>
+<td align="center">-v</td>
+<td align="center">显示命令执行信息</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">压缩文件形式</td>
+</tr>
+<tr>
+<td align="center">-x</td>
+<td align="center">解开压缩文件</td>
+</tr>
+<tr>
+<td align="center">-h</td>
+<td align="center">重新进行打包</td>
+</tr>
+<tr>
+<td align="center">-r</td>
+<td align="center">添加文件到一个压缩包中</td>
+</tr>
+<tr>
+<td align="center">-z</td>
+<td align="center">gzip压缩，节省空间</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">将bb打压缩包为bb.tar		#tar -cvf bb.tar bb	</span><br><span class="line">将bb解压缩			#tar -xvf bb.tar</span><br><span class="line">将bb打压缩包为bb.tar.gz（使用gzip）	#tar -czvf bb.tar.gz bb</span><br><span class="line">解压缩（gzip的包）			#tar -xzvf bb.tar.gz</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/03/15/Jupyter%20Notebook/" rel="prev" title="Jupyter Notebook">
+      <i class="fa fa-chevron-left"></i> Jupyter Notebook
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">Linux基础命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">创建软连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">文件复制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8"><span class="nav-number">6.</span> <span class="nav-text">文件移动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cat%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">7.</span> <span class="nav-text">cat显示文件内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#less%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">8.</span> <span class="nav-text">less显示文件内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zip%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="nav-number">9.</span> <span class="nav-text">zip压缩与解压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9-x2F-%E4%B8%8D%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%85"><span class="nav-number">10.</span> <span class="nav-text">tar压缩与解压缩&#x2F;不需要安装</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="恒霖"
+      src="/images/touxiang.jpg">
+  <p class="site-author-name" itemprop="name">恒霖</p>
+  <div class="site-description" itemprop="description">强大的意志比技术更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">恒霖</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"log":false});</script></body>
+</html>
+
+<script type="text/javascript" src="/js/love.js"></script>
+  <canvas id="canvas" width="1440" height="900" ></canvas>
+  <script type="text/javascript" src="/js/DigitalRain.js"></script>

@@ -28,7 +28,7 @@
 <meta property="og:description" content="非关系型数据库和非关系型数据库">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-23T04:20:44.594Z">
-<meta property="article:modified_time" content="2023-03-23T05:33:32.517Z">
+<meta property="article:modified_time" content="2023-03-23T05:47:17.107Z">
 <meta property="article:author" content="恒霖">
 <meta property="article:tag" content="非关系型数据库">
 <meta name="twitter:card" content="summary">
@@ -190,7 +190,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-03-23 12:20:44 / 修改时间：13:33:32" itemprop="dateCreated datePublished" datetime="2023-03-23T12:20:44+08:00">2023-03-23</time>
+              <time title="创建时间：2023-03-23 12:20:44 / 修改时间：13:47:17" itemprop="dateCreated datePublished" datetime="2023-03-23T12:20:44+08:00">2023-03-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,25 +242,25 @@
 <li>面向文档数据库</li>
 <li>键值数据库</li>
 </ol>
-<h3 id="键值数据库"><a href="#键值数据库" class="headerlink" title="键值数据库"></a>键值数据库</h3><ul>
+<h2 id="键值数据库"><a href="#键值数据库" class="headerlink" title="键值数据库"></a>键值数据库</h2><ul>
 <li>数据以“键-值”的形式进行存储</li>
 <li>基本的数据处理速度非常快</li>
 <li>键值的数据库例子：redis，dynamo，riak等</li>
 </ul>
-<h3 id="图形数据库"><a href="#图形数据库" class="headerlink" title="图形数据库"></a>图形数据库</h3><ul>
+<h2 id="图形数据库"><a href="#图形数据库" class="headerlink" title="图形数据库"></a>图形数据库</h2><ul>
 <li>数据村委更为灵活的“文档”模式</li>
 <li>每个文档都可以右自己的结构</li>
 <li>面向文档数据库例子：MongDB，CouchDB，OrientDB等</li>
 </ul>
-<h3 id="面向文档数据库"><a href="#面向文档数据库" class="headerlink" title="面向文档数据库"></a>面向文档数据库</h3><ul>
+<h2 id="面向文档数据库"><a href="#面向文档数据库" class="headerlink" title="面向文档数据库"></a>面向文档数据库</h2><ul>
 <li>以“列”的形式进行存储</li>
 <li>基于列的数据例子：Cassandra，Hbase，Scylla等</li>
 </ul>
-<h3 id="图形数据库-1"><a href="#图形数据库-1" class="headerlink" title="图形数据库"></a>图形数据库</h3><ul>
+<h2 id="图形数据库-1"><a href="#图形数据库-1" class="headerlink" title="图形数据库"></a>图形数据库</h2><ol>
 <li>除了存储尸体数据，也存储各个实体间的关系</li>
 <li>非常适用于社交软件、物流系统</li>
 <li>基于列的数据库例子：Neo4j，ArangoDB等</li>
-</ul>
+</ol>
 <h1 id="MongDB基础知识"><a href="#MongDB基础知识" class="headerlink" title="MongDB基础知识"></a>MongDB基础知识</h1><h2 id="基本了解"><a href="#基本了解" class="headerlink" title="基本了解"></a>基本了解</h2><blockquote>
 <p>MongoDB是面向文档数据库<br>json文件</p>
 <blockquote>
@@ -276,15 +276,13 @@
 <li>对象：{ }</li>
 <li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;name&quot;:&quot;小王&quot;	#字符串</span><br><span class="line">&quot;age&quot;:20		#整数</span><br><span class="line">&quot;studfent&quot;:true	#布尔值</span><br><span class="line">&quot;birthday&quot;:new Date(&quot;2000-01-01T00:00:00Z&quot;)	#日期</span><br><span class="line">&quot;course&quot;:[&quot;MySQL&quot;,&quot;MongDB&quot;]	#数组</span><br><span class="line">&quot;address&quot;:&#123;		#内嵌文档</span><br><span class="line">	&quot;street&quot;:&quot;1&quot;,</span><br><span class="line">	&quot;distuict&quot;:&quot;2&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&quot;job&quot;:null		#null用于表示空值不存在字段</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h1 id="MongDB基本使用"><a href="#MongDB基本使用" class="headerlink" title="MongDB基本使用"></a>MongDB基本使用</h1><h2 id="创建、删除数据库"><a href="#创建、删除数据库" class="headerlink" title="创建、删除数据库"></a>创建、删除数据库</h2><ul>
-<li>初始3个默认库：<ul>
+<h1 id="MongDB基本使用"><a href="#MongDB基本使用" class="headerlink" title="MongDB基本使用"></a>MongDB基本使用</h1><h2 id="创建、删除数据库"><a href="#创建、删除数据库" class="headerlink" title="创建、删除数据库"></a>创建、删除数据库</h2><p>初始3个默认库：</p>
+<ul>
 <li>admin：”root”数据库，被加入的用户将获得所有数据库权限，某些特定命令只能从admin数据库运行</li>
 <li>config：MongDB内部专业，内容会随着版本变化而变化，随意修改会导致数据存储不稳定和不持续，用于分片设置</li>
 <li>local：存储副本记得配置信息，只在本地存储数据<br><font color=red>初始3个默认数据库不要随意更改，存储和读取数据</font></li>
 </ul>
-</li>
-</ul>
-<h3 id="创建流程"><a href="#创建流程" class="headerlink" title="创建流程"></a>创建流程</h3><ul>
+<h2 id="创建流程"><a href="#创建流程" class="headerlink" title="创建流程"></a>创建流程</h2><ul>
 <li>CREATE DATABASE 创建数据库</li>
 <li>Database Name 数据库名字&#x2F;Collection name 集合名字<ul>
 <li>命名规则</li>
@@ -297,8 +295,8 @@
 </li>
 <li>Create Database</li>
 </ul>
-<h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><p>删除需要输入数据库名字才能删除</p>
-<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><blockquote>
+<h2 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h2><p>删除需要输入数据库名字才能删除</p>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><blockquote>
 <p><strong>方法一</strong><br>用insert document自己写json<br>在一个集合中，每个文档都有一个特殊的键_id<br>_id的默认类型是ObjectID，但他可以是任何类型<br>这个键在文档所属的集合中是唯一的</p>
 <ul>
 <li>如果两个集合，两个集合都可以有一个_id的值为123</li>
@@ -387,7 +385,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">非关系型数据库和非关系型数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">关系型数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">非关系型数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">非关系型数据库的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%AE%E5%80%BC%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.0.1.</span> <span class="nav-text">键值数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.0.2.</span> <span class="nav-text">图形数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%96%87%E6%A1%A3%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.0.3.</span> <span class="nav-text">面向文档数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%95%B0%E6%8D%AE%E5%BA%93-1"><span class="nav-number">2.0.4.</span> <span class="nav-text">图形数据库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongDB%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">3.</span> <span class="nav-text">MongDB基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3"><span class="nav-number">3.1.</span> <span class="nav-text">基本了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">基本数据类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongDB%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">MongDB基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.1.</span> <span class="nav-text">创建、删除数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="nav-number">4.1.1.</span> <span class="nav-text">创建流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.1.2.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">4.1.3.</span> <span class="nav-text">插入数据</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongDB-Compass"><span class="nav-number">5.</span> <span class="nav-text">MongDB Compass</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">非关系型数据库和非关系型数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">关系型数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">非关系型数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">非关系型数据库的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%AE%E5%80%BC%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">键值数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.2.</span> <span class="nav-text">图形数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%96%87%E6%A1%A3%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.3.</span> <span class="nav-text">面向文档数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BD%A2%E6%95%B0%E6%8D%AE%E5%BA%93-1"><span class="nav-number">2.4.</span> <span class="nav-text">图形数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongDB%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">3.</span> <span class="nav-text">MongDB基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BA%86%E8%A7%A3"><span class="nav-number">3.1.</span> <span class="nav-text">基本了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">基本数据类型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongDB%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">MongDB基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E3%80%81%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.1.</span> <span class="nav-text">创建、删除数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%B5%81%E7%A8%8B"><span class="nav-number">4.2.</span> <span class="nav-text">创建流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">4.3.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">4.4.</span> <span class="nav-text">插入数据</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MongDB-Compass"><span class="nav-number">5.</span> <span class="nav-text">MongDB Compass</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

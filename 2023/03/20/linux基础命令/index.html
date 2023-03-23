@@ -28,7 +28,7 @@
 <meta property="og:description" content="Linux基础命令">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-20T12:04:26.890Z">
-<meta property="article:modified_time" content="2023-03-21T05:10:05.601Z">
+<meta property="article:modified_time" content="2023-03-23T04:13:06.640Z">
 <meta property="article:author" content="恒霖">
 <meta name="twitter:card" content="summary">
 
@@ -195,7 +195,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-21 13:10:05" itemprop="dateModified" datetime="2023-03-21T13:10:05+08:00">2023-03-21</time>
+                <time title="修改时间：2023-03-23 12:13:06" itemprop="dateModified" datetime="2023-03-23T12:13:06+08:00">2023-03-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -579,6 +579,128 @@
 <ul>
 <li>例：<font color=red>tom:x:1000:1000: :&#x2F;home&#x2F;tom:&#x2F;bin&#x2F;bash</font></li>
 </ul>
+<h1 id="vi编辑器-1"><a href="#vi编辑器-1" class="headerlink" title="vi编辑器"></a>vi编辑器</h1><h2 id="vi编辑器分为三种"><a href="#vi编辑器分为三种" class="headerlink" title="vi编辑器分为三种"></a>vi编辑器分为三种</h2><ol>
+<li>命令模式：控制光标移动，可对文本进行复制、粘贴、删除、查找等</li>
+<li>输入模式：正常的文本录入</li>
+<li>末行模式：保存或退出文档，以及设置编辑环境</li>
+</ol>
+<h3 id="首次进入会进入命令模式"><a href="#首次进入会进入命令模式" class="headerlink" title="首次进入会进入命令模式"></a>首次进入会进入命令模式</h3><ul>
+<li>命令模式切换到输入模式：a、i、o<ul>
+<li>a：当前光标的最后一个位置进行编辑</li>
+<li>i：在当前光标的前一个位置进行编辑</li>
+<li>o：在当前光标的下一行，新起一行新型编辑</li>
+</ul>
+</li>
+<li>输入模式切换回命令模式：Esc</li>
+<li>命令模式切换回末行模式：：</li>
+<li>末行模式切换回命令模式：Esc</li>
+<li>例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi demo.txt	#打开demo.txt文件</span><br></pre></td></tr></table></figure>
+<font color=red>注意空格</font></li>
+</ul>
+<h2 id="末行模式中可用命令"><a href="#末行模式中可用命令" class="headerlink" title="末行模式中可用命令"></a>末行模式中可用命令</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">:w</td>
+<td align="center">保存</td>
+</tr>
+<tr>
+<td align="center">:q</td>
+<td align="center">退出</td>
+</tr>
+<tr>
+<td align="center">:wq</td>
+<td align="center">保存并退出</td>
+</tr>
+<tr>
+<td align="center">:q!</td>
+<td align="center">强制退出</td>
+</tr>
+<tr>
+<td align="center">:wq!</td>
+<td align="center">强制保存并退出</td>
+</tr>
+<tr>
+<td align="center">:set nu</td>
+<td align="center">显示行号</td>
+</tr>
+<tr>
+<td align="center">:set nonu</td>
+<td align="center">不显示行号</td>
+</tr>
+<tr>
+<td align="center">:命令</td>
+<td align="center">执行该命令</td>
+</tr>
+<tr>
+<td align="center">:行号</td>
+<td align="center">跳转到该行</td>
+</tr>
+<tr>
+<td align="center">:s&#x2F;one&#x2F;two</td>
+<td align="center">将当前光标所在行的第一个one替换成two</td>
+</tr>
+<tr>
+<td align="center">:&#x2F;one&#x2F;two&#x2F;g</td>
+<td align="center">将当前光标所在行的所有one替换成two</td>
+</tr>
+<tr>
+<td align="center">:%s&#x2F;one&#x2F;two&#x2F;g</td>
+<td align="center">将全文中的所有one替换成two</td>
+</tr>
+<tr>
+<td align="center">？字符串</td>
+<td align="center">在文本中从下至上搜索该字符串</td>
+</tr>
+<tr>
+<td align="center">&#x2F;字符串</td>
+<td align="center">在文本中从上至下搜索该字符串</td>
+</tr>
+</tbody></table>
+<h2 id="vi中常用的命令-命令模式使用"><a href="#vi中常用的命令-命令模式使用" class="headerlink" title="vi中常用的命令(命令模式使用)"></a>vi中常用的命令(命令模式使用)</h2><table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">dd</td>
+<td align="center">删除&#x2F;剪切光标所在行</td>
+</tr>
+<tr>
+<td align="center">5dd</td>
+<td align="center">删除光标处开始的5行,可以任意选择删除几行</td>
+</tr>
+<tr>
+<td align="center">yy</td>
+<td align="center">复制光标所在行</td>
+</tr>
+<tr>
+<td align="center">5yy</td>
+<td align="center">辅助光标处开始的5行，和dd一样</td>
+</tr>
+<tr>
+<td align="center">n</td>
+<td align="center">显示搜索命令定位到的下一个字符串</td>
+</tr>
+<tr>
+<td align="center">N</td>
+<td align="center">显示搜索命令定位到的上一个字符串</td>
+</tr>
+<tr>
+<td align="center">u</td>
+<td align="center">撤销上一步操作</td>
+</tr>
+<tr>
+<td align="center">p</td>
+<td align="center">将指点删除的（dd）或复制（yy）过的数据粘贴到光标后面</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -656,7 +778,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">Linux基础命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">创建软连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">文件复制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8"><span class="nav-number">6.</span> <span class="nav-text">文件移动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cat%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">7.</span> <span class="nav-text">cat显示文件内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#less%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">8.</span> <span class="nav-text">less显示文件内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zip%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="nav-number">9.</span> <span class="nav-text">zip压缩与解压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9-x2F-%E4%B8%8D%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%85"><span class="nav-number">10.</span> <span class="nav-text">tar压缩与解压缩&#x2F;不需要安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-number">11.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-number">12.</span> <span class="nav-text">文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%BD%8D%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E"><span class="nav-number">12.1.</span> <span class="nav-text">第一位权限说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E4%BD%8D%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="nav-number">12.2.</span> <span class="nav-text">权限位数说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E6%BC%94%E7%A4%BA"><span class="nav-number">13.</span> <span class="nav-text">权限演示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">13.1.</span> <span class="nav-text">文件权限准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E6%93%8D%E4%BD%9C"><span class="nav-number">13.2.</span> <span class="nav-text">普通操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%93%8D%E4%BD%9C"><span class="nav-number">13.3.</span> <span class="nav-text">数字操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vi%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">14.</span> <span class="nav-text">vi编辑器</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">Linux基础命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">2.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-number">4.</span> <span class="nav-text">创建软连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%A4%8D%E5%88%B6"><span class="nav-number">5.</span> <span class="nav-text">文件复制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8A%A8"><span class="nav-number">6.</span> <span class="nav-text">文件移动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cat%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">7.</span> <span class="nav-text">cat显示文件内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#less%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="nav-number">8.</span> <span class="nav-text">less显示文件内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#zip%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="nav-number">9.</span> <span class="nav-text">zip压缩与解压缩</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#tar%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9-x2F-%E4%B8%8D%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%85"><span class="nav-number">10.</span> <span class="nav-text">tar压缩与解压缩&#x2F;不需要安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-number">11.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90"><span class="nav-number">12.</span> <span class="nav-text">文件权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%BD%8D%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E"><span class="nav-number">12.1.</span> <span class="nav-text">第一位权限说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E4%BD%8D%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="nav-number">12.2.</span> <span class="nav-text">权限位数说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E6%BC%94%E7%A4%BA"><span class="nav-number">13.</span> <span class="nav-text">权限演示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">13.1.</span> <span class="nav-text">文件权限准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%99%AE%E9%80%9A%E6%93%8D%E4%BD%9C"><span class="nav-number">13.2.</span> <span class="nav-text">普通操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%93%8D%E4%BD%9C"><span class="nav-number">13.3.</span> <span class="nav-text">数字操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vi%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">14.</span> <span class="nav-text">vi编辑器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vi%E7%BC%96%E8%BE%91%E5%99%A8-1"><span class="nav-number">15.</span> <span class="nav-text">vi编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vi%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%86%E4%B8%BA%E4%B8%89%E7%A7%8D"><span class="nav-number">15.1.</span> <span class="nav-text">vi编辑器分为三种</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A6%96%E6%AC%A1%E8%BF%9B%E5%85%A5%E4%BC%9A%E8%BF%9B%E5%85%A5%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="nav-number">15.1.1.</span> <span class="nav-text">首次进入会进入命令模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AB%E8%A1%8C%E6%A8%A1%E5%BC%8F%E4%B8%AD%E5%8F%AF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">15.2.</span> <span class="nav-text">末行模式中可用命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vi%E4%B8%AD%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F%E4%BD%BF%E7%94%A8"><span class="nav-number">15.3.</span> <span class="nav-text">vi中常用的命令(命令模式使用)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

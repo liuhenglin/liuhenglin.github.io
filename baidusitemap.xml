@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/2023/03/15/Jupyter%20Notebook/</loc>
-    <lastmod>2023-04-06</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/2023/04/06/MySQL/</loc>
     <lastmod>2023-04-06</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/03/23/MongDB/</loc>
-    <lastmod>2023-03-23</lastmod>
+    <lastmod>2023-04-06</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/03/20/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2023-03-23</lastmod>
+    <lastmod>2023-04-06</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/03/15/Jupyter%20Notebook/</loc>
+    <lastmod>2023-04-06</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/03/13/hello-world/</loc>

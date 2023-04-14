@@ -28,7 +28,7 @@
 <meta property="og:description" content="MySQL基础">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-06T02:53:03.802Z">
-<meta property="article:modified_time" content="2023-04-13T01:55:57.160Z">
+<meta property="article:modified_time" content="2023-04-14T05:02:08.431Z">
 <meta property="article:author" content="恒霖">
 <meta property="article:tag" content="关系型数据库">
 <meta name="twitter:card" content="summary">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-13 09:55:57" itemprop="dateModified" datetime="2023-04-13T09:55:57+08:00">2023-04-13</time>
+                <time title="修改时间：2023-04-14 13:02:08" itemprop="dateModified" datetime="2023-04-14T13:02:08+08:00">2023-04-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,8 +275,7 @@
 <h3 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h3><p>drop database [if exists] 数据库名;<br>if exists 如果有就删除，没有就不删除</p>
 <h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><p>create table 表名(<br>    字段1 字段1类型[comment 字段1注释],<br>    字段2 字段2类型[comment 字段2注释],<br>    字段3 字段3类型[comment 字段3注释],<br>    ……<br>    字段n 字段n类型[comment 字段n注释]<br>)[comment 表注释] （类型：数字型，浮点型，…）<br>例：<br>create table a(<br>       id int comment ‘编号’,<br>       name varchar(50) comment ‘姓名’,<br>       age int comment ‘年龄’,<br>       gender varchar(1) comment ‘性别’<br>)comment ‘用户表’;<br><font color=red>mysql字符串用varchar(),括号里的是字符串最大长度</font></p>
 <h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>mysql中主要分为三类：数值类型、字符串类型、日期时间类型</p>
-<ol>
-<li>数值类型<table>
+<h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><table>
 <thead>
 <tr>
 <th align="center">类型</th>
@@ -376,8 +375,78 @@
 <td align="center"></td>
 </tr>
 </tbody></table>
-</li>
-</ol>
+<h4 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h4><table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">CHAR</td>
+<td align="center">定长字符串</td>
+</tr>
+<tr>
+<td align="center">VARCHAR</td>
+<td align="center">变长字符串</td>
+</tr>
+<tr>
+<td align="center">TINYBLOB</td>
+<td align="center">不超过255个字符的二进制数据</td>
+</tr>
+<tr>
+<td align="center">TINYTEXT</td>
+<td align="center">短文本字符串</td>
+</tr>
+<tr>
+<td align="center">BLOB</td>
+<td align="center">二进制形式的长文本数据</td>
+</tr>
+<tr>
+<td align="center">TEXT</td>
+<td align="center">长文本数据</td>
+</tr>
+<tr>
+<td align="center">MEDIUMBLOB</td>
+<td align="center">二进制形式的中等长度文本数据</td>
+</tr>
+<tr>
+<td align="center">MEDIUMTEXT</td>
+<td align="center">中等长度文本数据</td>
+</tr>
+<tr>
+<td align="center">LONGBLOB</td>
+<td align="center">二进制形式的极大文本数据</td>
+</tr>
+<tr>
+<td align="center">LONGTEXT</td>
+<td align="center">极大文本数据</td>
+</tr>
+<tr>
+<td align="center">二进制数据相当于视频，音频之类的</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">CHAR &#x2F; VARCHAR后面需要跟参数，参数就是CHAR &#x2F; VARCHAR最大长度可以有几个字符</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">例：CHAR(10) &#x3D; 最多有10位字符超过10个就是报错，即使只有1个字符也会用空格补齐其他的空位</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">VARCHAR(10) &#x3D; 最多有10位字符超过10个就是报错，不会用空格补齐</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">CHAR：性能好</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">VARCHAR：性能较差</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -458,7 +527,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">MySQL基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">SQL语句分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DDL"><span class="nav-number">2.</span> <span class="nav-text">DDL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmd-mysql-shell"><span class="nav-number">2.1.</span> <span class="nav-text">cmd mysql shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.1.</span> <span class="nav-text">库操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.1.3.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">2.1.4.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.5.</span> <span class="nav-text">类型</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">MySQL基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL%E8%AF%AD%E5%8F%A5%E5%88%86%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">SQL语句分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DDL"><span class="nav-number">2.</span> <span class="nav-text">DDL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmd-mysql-shell"><span class="nav-number">2.1.</span> <span class="nav-text">cmd mysql shell</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="nav-number">2.1.1.</span> <span class="nav-text">库操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.1.2.</span> <span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.1.3.</span> <span class="nav-text">删除数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA"><span class="nav-number">2.1.4.</span> <span class="nav-text">创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.5.</span> <span class="nav-text">类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">数值类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">字符串类型</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -28,7 +28,7 @@
 <meta property="og:description" content="Python数据分析">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-15T11:21:49.686Z">
-<meta property="article:modified_time" content="2023-04-06T03:00:32.633Z">
+<meta property="article:modified_time" content="2023-04-25T04:55:49.449Z">
 <meta property="article:author" content="恒霖">
 <meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-06 11:00:32" itemprop="dateModified" datetime="2023-04-06T11:00:32+08:00">2023-04-06</time>
+                <time title="修改时间：2023-04-25 12:55:49" itemprop="dateModified" datetime="2023-04-25T12:55:49+08:00">2023-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,6 +289,86 @@
 <td align="center">弹出”查找和替换”菜单</td>
 </tr>
 </tbody></table>
+<h1 id="Pandas库"><a href="#Pandas库" class="headerlink" title="Pandas库"></a>Pandas库</h1><h2 id="pandas简介"><a href="#pandas简介" class="headerlink" title="pandas简介"></a>pandas简介</h2><p>pandas库是python的一个数据分析包，最初由AQR Capital Management于2008年4月开发，并于     2009年底开源出来。Pandas最初被作为金融数据分析工具而开发出来。Pandas的名称来自于面板数   据  (panel data)和python数据分析(data analysis)。</p>
+<h2 id="加载方式"><a href="#加载方式" class="headerlink" title="加载方式"></a>加载方式</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br></pre></td></tr></table></figure>
+<p><font color=red>import 库名 as 缩写，用法与import 库名类似，只不过之后需要用缩写代替库名使用</font></p>
+<h2 id="pandas的数据类型"><a href="#pandas的数据类型" class="headerlink" title="pandas的数据类型"></a>pandas的数据类型</h2><ul>
+<li>pandas库为我们提供了两种新的数据类型：数据框：DataFrame 和序列：Series</li>
+<li>序列和我们常说的列表很像，只不过它的索引可以自定义，它的创建方式是通过列表创建，例：obj&#x3D;pd.Series([4,5,-8,1])。亦可通过字典生成序列：try: sdata&#x3D;{‘a’:1,’b’:1,’c’:0,’d’:1}obj3&#x3D;pd.Series(sdata)</li>
+<li>改变索引值的方法：对obj.index赋值，例：obj.index&#x3D;[‘a’,’b’,’c’,’d’]</li>
+<li>访问序列内元素方法：obj[“a”](序列加中括号索引）</li>
+<li>对于一个序列来说，可以用values 和index来查看它的值和索引： try： obj.values和obj.index </li>
+<li>序列之间可以进行运算，在进行运算的索引相同的情况下，这种运算是元素级的</li>
+</ul>
+<h3 id="pandas数据类型：数据框"><a href="#pandas数据类型：数据框" class="headerlink" title="pandas数据类型：数据框"></a>pandas数据类型：数据框</h3><ul>
+<li>数据框：简单点说，就是二维的数据表，在pandas里，它也是一系列共享索引的同长序列的集合。<br>新建一个 数据框的方法：利用字典：键为列名，值为list：如<br>‘’’<br>data&#x3D;{‘height’:[185,168,174],’weight’:[1,10,75,85],’mark’:[100,50,90]}<br>frame &#x3D; pd.DataFrame(data)</li>
+</ul>
+<p>#嵌套字典<br>data &#x3D; {‘小明’:{‘身高’:165,’体重’:’65’},’小红’:{‘身高’:172,’体重’:50},’小刚’:{‘身高’:185,’体重’:88}}<br>frame2 &#x3D; pd.DataFrame(data)<br>‘’’<br>数据框访问：利用数据框[列名]可以取出数据框中的一列数据。<br>数据框增加列：新增一列的方法类似于字典，直接利用数据框[列名]赋值即可。<br>数据框删除列：del + 数据框[列名]。</p>
+<h3 id="数据框操作"><a href="#数据框操作" class="headerlink" title="数据框操作"></a>数据框操作</h3><table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">DataFrame</td>
+<td align="center">创建一个DataFrame对象</td>
+</tr>
+<tr>
+<td align="center">df.values</td>
+<td align="center">返回ndarray类型的对象</td>
+</tr>
+<tr>
+<td align="center">df.index</td>
+<td align="center">获取行索引</td>
+</tr>
+<tr>
+<td align="center">df.columns</td>
+<td align="center">获取列索引</td>
+</tr>
+<tr>
+<td align="center">df.axes</td>
+<td align="center">获取列及行索引</td>
+</tr>
+<tr>
+<td align="center">df.T</td>
+<td align="center">行与列对调</td>
+</tr>
+<tr>
+<td align="center">df.info()</td>
+<td align="center">打印DataFrame对象的信息</td>
+</tr>
+<tr>
+<td align="center">df.head(i)</td>
+<td align="center">显示前i行数据</td>
+</tr>
+<tr>
+<td align="center">df.tail(i)</td>
+<td align="center">显示后i行数据</td>
+</tr>
+<tr>
+<td align="center">df.describe()</td>
+<td align="center">查看数据按列的统计信息</td>
+</tr>
+</tbody></table>
+<h2 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h2><h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><p>pd.read_csv(‘文件名’)<br>可选参数：<br>header ：用于取某一行作为列名，默认为0<br>可用 header&#x3D;加数字定义，例：header&#x3D; 1<br>names：如果header&#x3D;None，可以利用names给予列名<br>na_values:确认表内空值表示。即把na_values在文件中的取值都变为空值。<br>encoding：设置文件读取编码，默认为utf-8<br>如果遇到乱码用：encoding &#x3D; “utf-8_sig”强行改变字符，需要手动分列<br>含有中文的编码通常有 utf-8 和gbk 两种</p>
+<h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><p>数据框名.to_csv(‘文件名’)<br>参数：<br>index：生成文件时第一列会是数据框的index，如果不想要index可以写index&#x3D;False。<br>header：用法同index，用于控制写文件时要不要列名。</p>
+<h2 id="排列"><a href="#排列" class="headerlink" title="排列"></a>排列</h2><p>排序分为两种：<br>序列：对值排序和对索引排序。对索引进行排序的函数是sort_index()（升序），对值则是sort_values()<br>数据框：sort_values(by&#x3D;[列名1，列名2])</p>
+<ul>
+<li>双条件by&#x3D;[“条件一”,”条件二”…]重要条件放前面</li>
+<li>df.sort_values 最大值需要带的前置</li>
+<li>排名：s.rank()对series的值进行升序排名，输出为排名，当排名相同时，输出平均排名</li>
+<li>method 参数可以避免出现上诉情况例：例如method&#x3D;‘first’排名相同时按照值在数组中出现的顺序排名。.ranke()会出现1.5和1这种情况，用merhod &#x3D; “first”后会把1.5排到第2名这样就是第1名和第2名了，就不会是第1名和第1.5名了</li>
+<li>同排序，ascending&#x3D;False可以进行降序排名，True 升序</li>
+<li>对于数据框来说axis&#x3D;1来进行列排名</li>
+<li>取出一列 例：df[“列名”]</li>
+<li>.ranke()</li>
+</ul>
+<h1 id="数据框切片"><a href="#数据框切片" class="headerlink" title="数据框切片"></a>数据框切片</h1><h2 id="iloc与loc"><a href="#iloc与loc" class="headerlink" title="iloc与loc"></a>iloc与loc</h2><h3 id="loc"><a href="#loc" class="headerlink" title="loc"></a>loc</h3><p>loc源自单词location<br>生成数据框</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd lis = [ [1,1,1] , [2,2,2] , [3,3,3] ] </span><br><span class="line">frame = pd.DataFrame(lis ,columns = [&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;])</span><br><span class="line">frame</span><br></pre></td></tr></table></figure>
+<p>切片frame.loc[范围1：范围2，值 ] 包含起始包含终止<br>例：<br>frame.loc[1:2,:]<br>frame.loc[[0,1,2],’a’:’b’]<br>frame.loc[2:3,’a’]<br>按条件取数 ：<br>表示取出frame中“b”列的值大于2的所有行 data.loc[data[‘b’] &gt; 2, :]</p>
+<h3 id="iloc"><a href="#iloc" class="headerlink" title="iloc"></a>iloc</h3><p>iloc 是 int location的缩写，即使用纯数字索引来表示数据在数据框中的位置以获取数据。<br><font color=red>iloc包含起始不包含终止（纯数字）（从零开数）</font><br>切片<br>下面两种方法有同样的效果;<br>表示取出df中位于第2行和第2列的那个数据data.iloc[1:2,1:2] data.iloc[[1],[1]]<br>df.iloc[0]、df.iloc[1]、df.iloc[-1] 分别表示第一行、第二行、最后一行<br>同理df.iloc[:,0]、df.iloc[:,1]、df.iloc[:,-1]分别表示第一列、第二列、最后一列<br>对普通列表的切片操作同样适用于iloc</p>
 
     </div>
 
@@ -372,7 +452,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Python数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">为什么进行数据分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%93%E7%9A%84%E8%B0%83%E7%94%A8%E5%92%8C%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">库的调用和安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jupyter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">3.</span> <span class="nav-text">Jupyter的基本快捷键</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Python数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">为什么进行数据分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%93%E7%9A%84%E8%B0%83%E7%94%A8%E5%92%8C%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">库的调用和安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jupyter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">3.</span> <span class="nav-text">Jupyter的基本快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">Pandas库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas%E7%AE%80%E4%BB%8B"><span class="nav-number">4.1.</span> <span class="nav-text">pandas简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">加载方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.3.</span> <span class="nav-text">pandas的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="nav-number">4.3.1.</span> <span class="nav-text">pandas数据类型：数据框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E6%93%8D%E4%BD%9C"><span class="nav-number">4.3.2.</span> <span class="nav-text">数据框操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="nav-number">4.4.</span> <span class="nav-text">文件读写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.1.</span> <span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.2.</span> <span class="nav-text">写文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%88%97"><span class="nav-number">4.5.</span> <span class="nav-text">排列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%88%87%E7%89%87"><span class="nav-number">5.</span> <span class="nav-text">数据框切片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#iloc%E4%B8%8Eloc"><span class="nav-number">5.1.</span> <span class="nav-text">iloc与loc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#loc"><span class="nav-number">5.1.1.</span> <span class="nav-text">loc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iloc"><span class="nav-number">5.1.2.</span> <span class="nav-text">iloc</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -28,7 +28,7 @@
 <meta property="og:description" content="Python数据分析">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-15T11:21:49.686Z">
-<meta property="article:modified_time" content="2023-04-25T05:01:45.603Z">
+<meta property="article:modified_time" content="2023-04-27T04:59:44.250Z">
 <meta property="article:author" content="恒霖">
 <meta property="article:tag" content="数据分析">
 <meta name="twitter:card" content="summary">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-25 13:01:45" itemprop="dateModified" datetime="2023-04-25T13:01:45+08:00">2023-04-25</time>
+                <time title="修改时间：2023-04-27 12:59:44" itemprop="dateModified" datetime="2023-04-27T12:59:44+08:00">2023-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -302,8 +302,10 @@
 </ul>
 <h3 id="pandas数据类型：数据框"><a href="#pandas数据类型：数据框" class="headerlink" title="pandas数据类型：数据框"></a>pandas数据类型：数据框</h3><ul>
 <li>数据框：简单点说，就是二维的数据表，在pandas里，它也是一系列共享索引的同长序列的集合。<br>新建一个 数据框的方法：利用字典：键为列名，值为list：如 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data=&#123;&#x27;height&#x27;:[185,168,174],&#x27;weight&#x27;:[1,10,75,85],&#x27;mark&#x27;:[100,50,90]&#125;</span><br><span class="line">frame = pd.DataFrame(data)</span><br><span class="line">#嵌套字典</span><br><span class="line">data = &#123;&#x27;小明&#x27;:&#123;&#x27;身高&#x27;:165,&#x27;体重&#x27;:&#x27;65&#x27;&#125;,&#x27;小红&#x27;:&#123;&#x27;身高&#x27;:172,&#x27;体重&#x27;:50&#125;,&#x27;小刚&#x27;:&#123;&#x27;身高&#x27;:185,&#x27;体重&#x27;:88&#125;&#125;</span><br><span class="line">frame2 = pd.DataFrame(data)</span><br></pre></td></tr></table></figure>
-数据框访问：利用数据框[列名]可以取出数据框中的一列数据。<br>数据框增加列：新增一列的方法类似于字典，直接利用数据框[列名]赋值即可。<br>数据框删除列：del + 数据框[列名]。</li>
+数据框访问：利用数据框[列名]可以取出数据框中的一列数据。<br>数据框增加列：新增一列的方法类似于字典，直接利用数据框[列名]赋值即可。</li>
 </ul>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p>del：用于删除数据中的一列&#x2F;行<br>drop：用于删除多列&#x2F;行<br>格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据.drop(&#x27;a&#x27;) #删除a行，单行删除</span><br><span class="line">数据.drop([&#x27;a&#x27;,&#x27;b&#x27;]) #删除a和b行，多行删除</span><br><span class="line">数据.drop(&quot;A&quot;,axis=1)#删除一列，axis=1删除一列，axis=0删除一行，默认为0</span><br></pre></td></tr></table></figure>
 <h3 id="数据框操作"><a href="#数据框操作" class="headerlink" title="数据框操作"></a>数据框操作</h3><table>
 <thead>
 <tr>
@@ -365,10 +367,73 @@
 <li>取出一列 例：df[“列名”]</li>
 <li>.ranke()</li>
 </ul>
-<h1 id="数据框切片"><a href="#数据框切片" class="headerlink" title="数据框切片"></a>数据框切片</h1><h2 id="iloc与loc"><a href="#iloc与loc" class="headerlink" title="iloc与loc"></a>iloc与loc</h2><h3 id="loc"><a href="#loc" class="headerlink" title="loc"></a>loc</h3><p>loc源自单词location<br>生成数据框</p>
+<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><h3 id="loc"><a href="#loc" class="headerlink" title="loc"></a>loc</h3><p>loc源自单词location<br>生成数据框</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd lis = [ [1,1,1] , [2,2,2] , [3,3,3] ] </span><br><span class="line">frame = pd.DataFrame(lis ,columns = [&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;])</span><br><span class="line">frame</span><br></pre></td></tr></table></figure>
 <p>切片frame.loc[范围1：范围2，值 ] 包含起始包含终止<br>例：<br>frame.loc[1:2,:]<br>frame.loc[[0,1,2],’a’:’b’]<br>frame.loc[2:3,’a’]<br>按条件取数 ：<br>表示取出frame中“b”列的值大于2的所有行 data.loc[data[‘b’] &gt; 2, :]</p>
-<h3 id="iloc"><a href="#iloc" class="headerlink" title="iloc"></a>iloc</h3><p>iloc 是 int location的缩写，即使用纯数字索引来表示数据在数据框中的位置以获取数据。<br><font color=red>iloc包含起始不包含终止（纯数字）（从零开数）</font><br>切片<br>下面两种方法有同样的效果;<br>表示取出df中位于第2行和第2列的那个数据data.iloc[1:2,1:2] data.iloc[[1],[1]]<br>df.iloc[0]、df.iloc[1]、df.iloc[-1] 分别表示第一行、第二行、最后一行<br>同理df.iloc[:,0]、df.iloc[:,1]、df.iloc[:,-1]分别表示第一列、第二列、最后一列<br>对普通列表的切片操作同样适用于iloc</p>
+<h3 id="iloc"><a href="#iloc" class="headerlink" title="iloc"></a>iloc</h3><p>iloc 是 int location的缩写，即使用纯数字索引来表示数据在数据框中的位置以获取数据。<br><font color=red>iloc包含起始不包含终止（纯数字）（从零开数）</font><br>下面两种方法有同样的效果;<br>表示取出df中位于第2行和第2列的那个数据data.iloc[1:2,1:2] data.iloc[[1],[1]]<br>df.iloc[0]、df.iloc[1]、df.iloc[-1] 分别表示第一行、第二行、最后一行<br>同理df.iloc[:,0]、df.iloc[:,1]、df.iloc[:,-1]分别表示第一列、第二列、最后一列<br>对普通列表的切片操作同样适用于iloc</p>
+<h2 id="数据框运算"><a href="#数据框运算" class="headerlink" title="数据框运算"></a>数据框运算</h2><table>
+<thead>
+<tr>
+<th align="center">代码</th>
+<th align="center">用处</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">add,radd</td>
+<td align="center">用于加法(+)的方法</td>
+</tr>
+<tr>
+<td align="center">sub,rsub</td>
+<td align="center">用于减法(-)的方法</td>
+</tr>
+<tr>
+<td align="center">div,rdiv</td>
+<td align="center">用于除(&#x2F;)法的方法</td>
+</tr>
+<tr>
+<td align="center">floordiv,rfloordiv</td>
+<td align="center">用于底除(&#x2F;&#x2F;)的方法</td>
+</tr>
+<tr>
+<td align="center">mul,rmul</td>
+<td align="center">用于乘法(*)的方法</td>
+</tr>
+<tr>
+<td align="center">pow,rpow</td>
+<td align="center">用于指数(**)的方法</td>
+</tr>
+<tr>
+<td align="center">add和radd的区别</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">例：</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">a+b &#x3D; a.add(b)</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">a+b &#x3D; b.radd(a)</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="函数应用"><a href="#函数应用" class="headerlink" title="函数应用"></a>函数应用</h2><p>apply函数：数据.apply(函数)<br>如果apply函数没有其他参数，则对列进行函数调用，如果需要对一行进行调用，可以添加参数 axis&#x3D;’columns’:<br>数据.apply(函数,axis&#x3D;’columns’)<br>对于单个元素进行函数调用时：使用applymap(函数)</p>
+<h2 id="索引重建"><a href="#索引重建" class="headerlink" title="索引重建"></a>索引重建</h2><p>reindex函数可以对一个建好的序列进行索引重建：<br>try: obj&#x3D; pd.Series([‘Hello’,’women’,’and’,’Gentlemen’],index&#x3D;[‘d’,’c’,’b’,a’])<br>obj&#x3D;obj.reindex([‘a’,’b’,’c’,’d’])<br>如果使用reindex时加入了不存在的index，会使序列中出现缺失值：<br>try: obj2&#x3D;obj.reindex([‘a’,’b’,’c’,’d’,’e’])</p>
+<h2 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h2><p>数据.fillna(value&#x3D;0)<br>数据.fillna(method&#x3D;”ffill”) &#x3D; 向下填充数值（直到填充到数值停止）<br>fillna method可选：ffill和biff<br>ffill向下填充数值<br>biff向上填充数值<br>limit可以控制填充的空值数量</p>
+<ul>
+<li>DataFrame.fillna(value&#x3D;None,method&#x3D;diff,None,axis&#x3D;0,inplace&#x3D;False,limit&#x3D;None,downcast&#x3D;None)<ul>
+<li>value&#x3D;None 最大值</li>
+<li>method 向上向下填充</li>
+<li>None 默认值</li>
+<li>axis&#x3D;0 默认为行</li>
+<li>inplace&#x3D;False 保存到原始数据</li>
+<li>limit&#x3D;None 填充空值数量</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据框条件过滤"><a href="#数据框条件过滤" class="headerlink" title="数据框条件过滤"></a>数据框条件过滤</h2><p>当对一个DataFrame进行判断时，实际上是对里面每一个数据进行判断：try： frame&gt;3<br>过滤操作实际上是对所有True的数据进行操作： frame[frame&gt;3]&#x3D;10<br>可以通过数据框名.列名来进行列过滤: frame[frame.B&gt;3]</p>
 
     </div>
 
@@ -452,7 +517,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Python数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">为什么进行数据分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%93%E7%9A%84%E8%B0%83%E7%94%A8%E5%92%8C%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">库的调用和安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jupyter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">3.</span> <span class="nav-text">Jupyter的基本快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">Pandas库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas%E7%AE%80%E4%BB%8B"><span class="nav-number">4.1.</span> <span class="nav-text">pandas简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">加载方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.3.</span> <span class="nav-text">pandas的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="nav-number">4.3.1.</span> <span class="nav-text">pandas数据类型：数据框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E6%93%8D%E4%BD%9C"><span class="nav-number">4.3.2.</span> <span class="nav-text">数据框操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="nav-number">4.4.</span> <span class="nav-text">文件读写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.1.</span> <span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.2.</span> <span class="nav-text">写文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%88%97"><span class="nav-number">4.5.</span> <span class="nav-text">排列</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%88%87%E7%89%87"><span class="nav-number">5.</span> <span class="nav-text">数据框切片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#iloc%E4%B8%8Eloc"><span class="nav-number">5.1.</span> <span class="nav-text">iloc与loc</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#loc"><span class="nav-number">5.1.1.</span> <span class="nav-text">loc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iloc"><span class="nav-number">5.1.2.</span> <span class="nav-text">iloc</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">Python数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="nav-number">1.1.</span> <span class="nav-text">为什么进行数据分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%93%E7%9A%84%E8%B0%83%E7%94%A8%E5%92%8C%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">库的调用和安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Jupyter%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">3.</span> <span class="nav-text">Jupyter的基本快捷键</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">Pandas库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas%E7%AE%80%E4%BB%8B"><span class="nav-number">4.1.</span> <span class="nav-text">pandas简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.</span> <span class="nav-text">加载方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pandas%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.3.</span> <span class="nav-text">pandas的数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9A%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="nav-number">4.3.1.</span> <span class="nav-text">pandas数据类型：数据框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">4.3.2.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E6%93%8D%E4%BD%9C"><span class="nav-number">4.3.3.</span> <span class="nav-text">数据框操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99"><span class="nav-number">4.4.</span> <span class="nav-text">文件读写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.1.</span> <span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.2.</span> <span class="nav-text">写文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%88%97"><span class="nav-number">4.5.</span> <span class="nav-text">排列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E7%89%87"><span class="nav-number">4.6.</span> <span class="nav-text">切片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#loc"><span class="nav-number">4.6.1.</span> <span class="nav-text">loc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iloc"><span class="nav-number">4.6.2.</span> <span class="nav-text">iloc</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E8%BF%90%E7%AE%97"><span class="nav-number">4.7.</span> <span class="nav-text">数据框运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BA%94%E7%94%A8"><span class="nav-number">4.8.</span> <span class="nav-text">函数应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E9%87%8D%E5%BB%BA"><span class="nav-number">4.9.</span> <span class="nav-text">索引重建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A1%AB%E5%85%85"><span class="nav-number">4.10.</span> <span class="nav-text">填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E6%9D%A1%E4%BB%B6%E8%BF%87%E6%BB%A4"><span class="nav-number">4.11.</span> <span class="nav-text">数据框条件过滤</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
